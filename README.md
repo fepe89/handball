@@ -43,15 +43,7 @@ Der Hauptteil baut methodisch vom Einfachen zum Komplexen über 4 Phasen auf:
 
 ---
 
-## 📂 Dateien im Repository
-
-- `handball_abwehrtraining_interaktiv.html`: Voll interaktive Web-App mit SVG-Animationen und Schritt-für-Schritt-Steuerung.
-- `handball_abwehrtraining_plan.html`: Schlanke Version komplett ohne JavaScript (speziell optimiert für die iOS-Dateien-App / QuickLook).
-
----
-
 ## 📱 Nutzung auf dem Smartphone / Tablet
 
-1. Repository klonen oder die gewünschte `.html`-Datei herunterladen:
-   ```bash
-   git clone https://github.com/<dein-username>/<repo-name>.git
+- Repository klonen oder herunterladen.
+- Alternativ aufruf unter https://fepe89.github.io/handball/
