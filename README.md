@@ -39,7 +39,6 @@ Der Hauptteil baut methodisch vom Einfachen zum Komplexen über 4 Phasen auf:
   - Exakte Darstellung der parallelen 6m- und 9m-Kreise (konzentrische Kreisbögen mit 3m-Gerade).
   - Korrekte Positionierung aus Angreifersicht in Richtung Tor.
   - Visualisierung von Passwegen (gestrichelt gelb), Laufwegen (blau), Stoßwegen (rot) und Sperrlinien.
-- **Stand-Alone & Offline-fähig:** Reines HTML5, CSS3 und Vanilla JavaScript ohne externe Frameworks oder CDN-Abhängigkeiten – funktioniert direkt auf Smartphone, Tablet (iPad) und Laptop in der Halle.
 
 ---
 
