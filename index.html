@@ -7,8 +7,6 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Handball 6:0">
   <title>6:0 Abwehrtraining – Sperren verteidigen</title>
-
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -30,7 +28,6 @@
               darkBg: '#1C1C1E',
               darkCard: '#2C2C2E',
               darkBorder: '#38383A',
-              darkSeparator: '#545458',
               segmentedBg: '#E5E5EA',
               darkSegmentedBg: '#3A3A3C'
             }
@@ -50,71 +47,25 @@
       }
     }
   </script>
-
   <style>
-    /* iOS Touch Target & Button Physics */
-    .touch-target {
-      min-height: 44px;
-      min-width: 44px;
-    }
-
-    .apple-tap-feedback {
-      transition: transform 0.12s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.12s ease;
-    }
-    .apple-tap-feedback:active {
-      transform: scale(0.97);
-      opacity: 0.85;
-    }
-
-    /* Native iOS Scrubber Slider */
-    input[type=range] {
-      -webkit-appearance: none;
-      background: transparent;
-    }
-    input[type=range]:focus {
-      outline: none;
-    }
-    input[type=range]::-webkit-slider-runnable-track {
-      width: 100%;
-      height: 5px;
-      cursor: pointer;
-      background: #E5E5EA;
-      border-radius: 9999px;
-    }
-    @media (prefers-color-scheme: dark) {
-      input[type=range]::-webkit-slider-runnable-track {
-        background: #3A3A3C;
-      }
-    }
-    input[type=range]::-webkit-slider-thumb {
-      height: 22px;
-      width: 22px;
-      border-radius: 50%;
-      background: #FFFFFF;
-      cursor: pointer;
-      -webkit-appearance: none;
-      margin-top: -8.5px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.22), 0 0 1px rgba(0,0,0,0.2);
-      border: 0.5px solid rgba(0,0,0,0.06);
-    }
-    @media (prefers-color-scheme: dark) {
-      input[type=range]::-webkit-slider-thumb {
-        background: #FFFFFF;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-      }
-    }
-
-    /* Smooth Scrollbar Hiding */
+    .touch-target { min-height: 44px; min-width: 44px; }
+    .apple-tap-feedback { transition: transform 0.12s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.12s ease; }
+    .apple-tap-feedback:active { transform: scale(0.97); opacity: 0.85; }
+    input[type=range] { -webkit-appearance: none; background: transparent; }
+    input[type=range]:focus { outline: none; }
+    input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 5px; cursor: pointer; background: #E5E5EA; border-radius: 9999px; }
+    @media (prefers-color-scheme: dark) { input[type=range]::-webkit-slider-runnable-track { background: #3A3A3C; } }
+    input[type=range]::-webkit-slider-thumb { height: 22px; width: 22px; border-radius: 50%; background: #FFFFFF; cursor: pointer; -webkit-appearance: none; margin-top: -8.5px; box-shadow: 0 2px 8px rgba(0,0,0,0.22); border: 0.5px solid rgba(0,0,0,0.06); }
+    @media (prefers-color-scheme: dark) { input[type=range]::-webkit-slider-thumb { background: #FFFFFF; box-shadow: 0 2px 8px rgba(0,0,0,0.5); } }
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
 </head>
 <body class="bg-apple-bg dark:bg-apple-darkBg text-black dark:text-white min-h-screen flex flex-col font-sans selection:bg-apple-blue selection:text-white pb-16 pt-safe">
 
-  <!-- Hauptcontainer -->
   <main class="max-w-4xl w-full mx-auto px-4 pt-6 sm:px-6 flex-grow flex flex-col gap-5">
-
-    <!-- 1. iOS Large Title Header (Linksbündig, groß & fett) -->
+    
+    <!-- Header -->
     <header class="flex flex-col gap-0.5">
       <span class="text-xs font-semibold uppercase tracking-wider text-apple-blue dark:text-[#0A84FF]">
         Abwehrtraining • 45 Minuten
@@ -127,7 +78,7 @@
       </p>
     </header>
 
-    <!-- 2. iOS Segmented Control (Varianten-Auswahl) -->
+    <!-- Varianten-Umschalter -->
     <div class="bg-apple-segmentedBg dark:bg-apple-darkSegmentedBg p-1 rounded-2xl flex shadow-inner">
       <button id="var1-btn" onclick="setVariant(1)" class="touch-target apple-tap-feedback flex-1 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-[#636366] text-black dark:text-white shadow-sm flex items-center justify-center gap-2">
         <svg class="w-4 h-4 text-apple-blue" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z"/></svg>
@@ -135,11 +86,11 @@
       </button>
       <button id="var2-btn" onclick="setVariant(2)" class="touch-target apple-tap-feedback flex-1 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-medium transition-all duration-200 text-gray-500 dark:text-gray-400 flex items-center justify-center gap-2">
         <svg class="w-4 h-4 text-apple-green" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        <span>Variante 2: 5 Außen & Konter</span>
+        <span>Variante 2: Außen & Verbund</span>
       </button>
     </div>
 
-    <!-- 3. iOS Phasen-Navigation (Pills) -->
+    <!-- Phasen-Navigation -->
     <nav class="flex gap-2 overflow-x-auto no-scrollbar py-0.5">
       <button id="tab-0" onclick="setPhase(0)" class="touch-target apple-tap-feedback px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap bg-apple-blue text-white shadow-sm flex items-center gap-1.5 transition-all">
         <span>Phase 1: 2:2 Sektor</span>
@@ -159,13 +110,13 @@
       </button>
     </nav>
 
-    <!-- 4. Hauptansicht (Apple 2-Spalten-Layout) -->
+    <!-- Hauptbereich -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
-
-      <!-- Linke Spalte: Spielfeld & Medien-Steuerung (7 Spalten) -->
+      
+      <!-- Linke Spalte: Taktikboard & Steuerung -->
       <section class="lg:col-span-7 flex flex-col gap-4">
-
-        <!-- Spielfeld-Karte (Reinweiß, rounded-2xl, shadow-sm) -->
+        
+        <!-- Spielfeld-Karte -->
         <div class="bg-apple-card dark:bg-apple-darkCard rounded-2xl border border-apple-border dark:border-apple-darkBorder shadow-sm p-4 sm:p-5 flex flex-col gap-3">
           
           <div class="flex items-center justify-between gap-2">
@@ -178,7 +129,6 @@
               </p>
             </div>
 
-            <!-- iOS Segmented Control für Lösung A / B in Phase 1 -->
             <div id="sub-toggle-container" class="bg-apple-segmentedBg dark:bg-apple-darkSegmentedBg p-0.5 rounded-xl flex">
               <button id="sol-a-btn" onclick="setSolution('A')" class="px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-white dark:bg-[#636366] text-black dark:text-white shadow-xs transition-all">
                 A: Vorbeikämpfen
@@ -189,38 +139,25 @@
             </div>
           </div>
 
-          <!-- Zentriertes Handball-Spielfeld (Mattes Hallen-Blau #4A90E2) -->
+          <!-- Zentriertes Handballfeld -->
           <div class="relative w-full rounded-xl overflow-hidden bg-[#4A90E2] dark:bg-[#2C5E9E] border border-black/10 shadow-inner flex items-center justify-center" style="aspect-ratio: 1.45 / 1;">
             <svg id="tactic-svg" viewBox="0 0 500 340" class="w-full h-full block">
               <defs>
-                <marker id="arrow-pass" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-                  <path d="M 0 1 L 10 5 L 0 9 z" fill="#FFCC00" />
-                </marker>
-                <marker id="arrow-run" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-                  <path d="M 0 1 L 10 5 L 0 9 z" fill="#FFFFFF" />
-                </marker>
-                <marker id="arrow-att" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-                  <path d="M 0 1 L 10 5 L 0 9 z" fill="#FF3B30" />
-                </marker>
+                <marker id="arrow-pass" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#FFCC00" /></marker>
+                <marker id="arrow-run" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#FFFFFF" /></marker>
+                <marker id="arrow-att" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#FF3B30" /></marker>
               </defs>
 
-              <!-- Tor (3m Breite) -->
               <rect x="215" y="4" width="70" height="16" fill="#FF3B30" stroke="#FFFFFF" stroke-width="1.5" rx="1.5"/>
               <line x1="20" y1="20" x2="480" y2="20" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="1.5" />
-
-              <!-- 6m-Torraumlinie: Fein, weiß, präzise Kreisbögen -->
               <path d="M 105 20 A 110 110 0 0 0 215 130 L 285 130 A 110 110 0 0 0 395 20" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-opacity="0.95"/>
-
-              <!-- 9m-Freiwurflinie: Parallel im 3m Abstand gestrichelt -->
               <path d="M 50 20 A 165 165 0 0 0 215 185 L 285 185 A 165 165 0 0 0 450 20" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="6,6" stroke-opacity="0.75"/>
 
-              <!-- Dynamische Taktik-Ebenen -->
               <g id="tactical-layer"></g>
               <g id="players-layer"></g>
             </svg>
           </div>
 
-          <!-- Legende -->
           <div class="flex flex-wrap items-center justify-between text-[11px] text-gray-500 dark:text-gray-400 pt-2 border-t border-apple-border/60 dark:border-apple-darkBorder">
             <div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-apple-blue inline-block"></span> 6:0 Abwehr</div>
             <div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-apple-red inline-block"></span> Angriff</div>
@@ -229,10 +166,9 @@
           </div>
         </div>
 
-        <!-- Apple Medien-Steuerung & Dynamische Schrittkarte -->
+        <!-- Medien-Steuerung & Schritt-Erklärung -->
         <div class="bg-apple-card dark:bg-apple-darkCard rounded-2xl border border-apple-border dark:border-apple-darkBorder shadow-sm p-4 sm:p-5 flex flex-col gap-3">
           
-          <!-- Vor / Zurück Buttons im Apple-Stil (h-11, min. 44px Touch Target) -->
           <div class="flex items-center justify-between gap-3">
             <button id="prev-btn" onclick="prevStep()" class="touch-target apple-tap-feedback flex-1 h-11 px-4 rounded-xl bg-apple-segmentedBg dark:bg-apple-darkSegmentedBg text-black dark:text-white font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 disabled:opacity-30 disabled:pointer-events-none">
               <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
@@ -249,14 +185,13 @@
             </button>
           </div>
 
-          <!-- Time Scrubber Slider -->
           <div class="flex items-center gap-3 pt-1">
             <span class="text-[11px] font-medium text-gray-500 dark:text-gray-400">Ablauf</span>
             <input type="range" id="scrubber" min="0" max="100" value="0" oninput="onScrub(this.value)" class="flex-grow">
             <span id="step-counter" class="text-xs font-bold text-gray-500 dark:text-gray-400 w-8 text-right">0%</span>
           </div>
 
-          <!-- DYNAMISCHE SCHRITT-ERKLÄRUNG DIREKT UNTER DEN BUTTONS -->
+          <!-- Dynamische Schritt-Erklärung direkt unter den Buttons -->
           <div class="mt-1 bg-apple-bg dark:bg-apple-darkBg p-3.5 sm:p-4 rounded-xl border border-apple-border dark:border-apple-darkBorder flex flex-col gap-1">
             <div class="flex items-center justify-between">
               <span id="dyn-step-title" class="text-xs sm:text-sm font-bold text-apple-green dark:text-[#30D158] flex items-center gap-1.5">
@@ -276,10 +211,9 @@
 
       </section>
 
-      <!-- Rechte Spalte: Apple Inset Grouped Coaching Details (5 Spalten) -->
+      <!-- Rechte Spalte: Coaching Details -->
       <aside class="lg:col-span-5 flex flex-col gap-4">
 
-        <!-- Detail-Karte -->
         <div class="bg-apple-card dark:bg-apple-darkCard rounded-2xl border border-apple-border dark:border-apple-darkBorder shadow-sm p-4 sm:p-5 flex flex-col gap-4">
           
           <div class="flex items-center justify-between pb-3 border-b border-apple-border/60 dark:border-apple-darkBorder">
@@ -292,7 +226,6 @@
             </span>
           </div>
 
-          <!-- Übungsziel -->
           <div>
             <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-1">
               Übungsziel & Ablauf
@@ -302,17 +235,13 @@
             </p>
           </div>
 
-          <!-- Coaching Punkte -->
           <div>
             <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-1.5">
               Trainer-Coaching
             </h4>
-            <ul id="card-coaching" class="space-y-2 text-xs sm:text-sm text-black dark:text-white">
-              <!-- Dynamisch befüllt -->
-            </ul>
+            <ul id="card-coaching" class="space-y-2 text-xs sm:text-sm text-black dark:text-white"></ul>
           </div>
 
-          <!-- Material -->
           <div class="pt-3 border-t border-apple-border/60 dark:border-apple-darkBorder">
             <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-1">
               Benötigtes Material
@@ -324,14 +253,13 @@
 
         </div>
 
-        <!-- Taktische 6:0 Leitlinie -->
         <div class="bg-apple-card dark:bg-apple-darkCard rounded-2xl border border-apple-border dark:border-apple-darkBorder shadow-sm p-4 sm:p-5 flex flex-col gap-2">
           <h4 class="text-xs font-bold uppercase tracking-wider text-apple-orange flex items-center gap-1.5">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
             Kompakte 6:0 Leitlinien
           </h4>
           <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-            • <strong>Außenverteidiger:</strong> Bei Pass auf LA nicht attackieren, sondern den direkten Passweg zum Kreis (KM) versperren.<br>
+            • <strong>Außenverteidiger (A-AR):</strong> Bei Pass auf LA nicht attackieren, sondern den direkten Passweg zum Kreis (KM) versperren.<br>
             • <strong>Kommandos:</strong> Lautes <em>„Sperre innen!“</em> oder <em>„WECHSEL!“</em> fordern, bevor der Angreifer den Ball fängt.
           </p>
         </div>
@@ -342,7 +270,7 @@
 
   </main>
 
-  <!-- JavaScript Logik (Vollständige Taktik- und Animations-Engine) -->
+  <!-- JavaScript Logik -->
   <script>
     let currentVariant = 1;
     let currentPhase = 0;
@@ -443,56 +371,56 @@
           ]
         },
         {
-          title: "Phase 2: 4:4 mit Außenhilfe (Passweg zu KM zustellen)",
+          title: "Phase 2: 3:3 Außensektor (A-AR, A-HR, A-IR vs. LA, RL, KM)",
           time: "Dauer: 15 Min",
-          players: "A-AR, A-HR, A-IR, A-IL vs. LA, RL, RM, KM",
-          material: "Bälle, Leibchen, Neunmeter-Markierung.",
-          desc: "A-AR attackiert RL nicht, sondern sichert die Nahtstelle. Erhält LA den Pass auf Außen, stellt sich A-AR so in die Wurfbahn, dass der Passweg zu KM versperrt ist.",
+          players: "3 Abwehr (A-AR, A-HR, A-IR) vs. 3 Angriff (LA, RL, KM)",
+          material: "Bälle, Leibchen, 4 Markierungsteller zur Sektorabgrenzung.",
+          desc: "Zusammenspiel auf Außen und Halb rechts. KM sperrt primär gegen A-HR. A-AR sichert bei Druck auf Halb die Nahtstelle ab und sperrt bei Pass auf LA konsequent den Passweg zu KM zu.",
           coaching: [
-            "A-AR bleibt diszipliniert und lässt sich nicht auf RL herauslocken.",
-            "Bei Ball auf LA: A-AR macht die Passlinie zu KM dicht!",
-            "TW deckt die kurze Ecke ab; A-AR zwingt LA zum schweren Außenwurf auf lang."
+            "A-AR lässt sich bei Stoß von RL NICHT herauslocken, sondern sichert die Passlinie zu KM.",
+            "KM sperrt gegen Halb rechts -> A-HR kämpft sich vorn vorbei; A-IR hilft innen.",
+            "Pass auf LA -> A-AR attackiert den Wurfwinkel, stellt aber den direkten Querpass zu KM komplett zu!"
           ],
           steps: [
-            { t: 0.0, title: "1. Druck auf Halb", text: "RL stößt an; KM sperrt auf der Innenschulter von A-HR." },
-            { t: 0.33, title: "2. A-AR rückt ein", text: "A-AR rückt 2m zur Nahtstelle ein (Nahthilfe), deckt den Pass zu KM ab." },
-            { t: 0.66, title: "3. Pass nach außen", text: "RL passt zu LA. A-AR stellt sich sofort vor den Passweg zu KM." },
-            { t: 1.0, title: "4. Wurf aus spitzem Winkel", text: "LA kann nicht ablegen und muss aus spitzem Winkel werfen (TW hält kurz)." }
+            { t: 0.0, title: "1. Ausgangsposition Außensektor", text: "RL baut Druck auf; LA steht bereit; KM läuft zur Sperre gegen A-HR an." },
+            { t: 0.33, title: "2. Sperre gegen Halb rechts", text: "KM setzt Sperre auf die Innenschulter von A-HR. RL zieht mit Wurfdrohung an." },
+            { t: 0.66, title: "3. Pass nach außen auf LA", text: "RL passt zu LA. A-AR rückt heraus und stellt sich direkt vor den Passweg zu KM!" },
+            { t: 1.0, title: "4. Wurf aus spitzem Winkel", text: "LA kann nicht zu KM ablegen und muss aus engem Winkel werfen (TW hält kurz)." }
           ]
         },
         {
-          title: "Phase 3: 6:6 Spielform mit Gegenstoß-Automatik",
+          title: "Phase 3: 4:4 Verbund & Innenblock-Hilfe",
           time: "Dauer: 15 Min",
-          players: "Volle Feldbreite (inkl. aller 5 Außen)",
-          material: "Gesamtes Feld, Bälle, 2 Torhüter.",
-          desc: "6:0-Abwehr gegen gebundenes Spiel. Ballferner Außen rückt tief ab; bei Ballgewinn oder Torwartparade starten beide Außen sofort die 1. Welle im Gegenstoß.",
+          players: "4 Abwehr (A-AR, A-HR, A-IR, A-IL) vs. 4 Angriff (LA, RL, RM, KM)",
+          material: "Gesamte linke Angriffshälfte, Bälle, Spielstand-Zählung.",
+          desc: "Wettkampfnahes 4:4 ohne Tempospiel. RM leitet über die Mitte ein; KM sperrt variabel gegen A-HR. A-IL sichert als ballferner Innenblocker auf 6m ab.",
           coaching: [
-            "Ballnaher Außen riegelt den Kreis ab; ballferner Außen (A-AL) sichert hinten.",
-            "Umschalten: Ballgewinn = sofortiger Vollsprint der Außen.",
-            "Präziser langer Pass des Torwarts führt zum direkten 1:0-Abschluss."
+            "Wettkampf: Max. 20 Sek. Angriffszeit. Tor = 1 Pkt | Ballgewinn/Stürmerfoul = 2 Pkt.",
+            "A-IL rückt als ballferner Innenblocker tief auf 6m ein (Trichtersicherung hinter A-IR).",
+            "A-AR blockiert bei Passverlagerung auf LA kompromisslos das Kreisanspiel."
           ],
           steps: [
-            { t: 0.0, title: "1. 6:0 Formiert", text: "Angriff spielt Positionsangriff mit Sperre im Rückraum." },
-            { t: 0.33, title: "2. Block & Parade", text: "Abwehr steht kompakt; TW pariert den Rückraumwurf." },
-            { t: 0.66, title: "3. 1. Welle Vollsprint", text: "A-AR und A-AL starten blitzartig den Tempogegenstoß über die Außenbahnen." },
-            { t: 1.0, title: "4. Konter-Tor 1:0", text: "Langer TW-Pass führt zum sicheren Torerfolg im Schnellangriff." }
+            { t: 0.0, title: "1. Angriffsauslöse über RM", text: "RM stößt an und passt mit Druck zu RL. KM positioniert sich bei A-HR." },
+            { t: 0.33, title: "2. Dynamische Sperre gegen A-HR", text: "KM sperrt A-HR; RL stößt in die Lücke. A-IR hilft gegen den Durchbruch." },
+            { t: 0.66, title: "3. Trichtersicherung & Pass auf LA", text: "A-IL sichert diagonal am 6m-Kreis ab. RL spielt Notpass nach außen zu LA." },
+            { t: 1.0, title: "4. Abriegeln & Abwehrerfolg", text: "A-AR blockiert Pass zu KM. Wurf von LA wird pariert / Fehlwurf erzwungen (2 Pkt!)." }
           ]
         },
         {
-          title: "Phase 4: Feedback & Tempospiel-Auswertung",
+          title: "Phase 4: Feedback & Verbund-Auswertung",
           time: "Dauer: 5 Min",
           players: "Gesamte Mannschaft",
           material: "Besprechungskreis.",
-          desc: "Reflexion über das Zusammenspiel zwischen Außen- und Halbverteidigern sowie die Effizienz der 1. Welle.",
+          desc: "Auswertung der Absprachen zwischen Außenverteidiger (A-AR), Halb rechts (A-HR) und den beiden Innenblockern.",
           coaching: [
-            "Wurde der Passweg zu KM konsequent zugestellt?",
-            "War der Gegenstoßantritt schnell genug?"
+            "Wurde der Kreispassweg von Außen (A-AR) immer konsequent versperrt?",
+            "Hat die Trichtersicherung von A-IL im 4:4 zuverlässig funktioniert?"
           ],
           steps: [
-            { t: 0.0, title: "1. Auswertung", text: "Feedback an Außen und Innenblock." },
-            { t: 0.33, title: "2. Umschaltverhalten", text: "Reaktionsschnelligkeit der Außen nach Ballgewinn besprechen." },
-            { t: 0.66, title: "3. Raumaufteilung", text: "Zusammenspiel zwischen Außen und Halb optimieren." },
-            { t: 1.0, title: "4. Saison-Ausblick", text: "Automatismen für den Spieltag festigen." }
+            { t: 0.0, title: "1. Analyse im Kreis", text: "Auswertung der Ballgewinne und Zweikampf-Erfolge im Außensektor." },
+            { t: 0.33, title: "2. Torwart-Feedback", text: "Stand die Abwehr bei Würfen von LA und RL wie abgesprochen?" },
+            { t: 0.66, title: "3. Stellungsspiel-Korrektur", text: "Disziplin beim Zustellen der Passwege nochmals hervorheben." },
+            { t: 1.0, title: "4. Ausblick", text: "Feste Absprachen für das nächste Punktspiel fixieren." }
           ]
         }
       ]
@@ -511,8 +439,8 @@
         v1.className = "touch-target apple-tap-feedback flex-1 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-medium transition-all duration-200 text-gray-500 dark:text-gray-400 flex items-center justify-center gap-2";
       }
 
-      document.getElementById('tab-label-1').innerText = v === 1 ? "Phase 2: 3:3 Innenblock" : "Phase 2: 4:4 mit Außenhilfe";
-      document.getElementById('tab-label-2').innerText = v === 1 ? "Phase 3: 4:4 Zentrum" : "Phase 3: 6:6 & Gegenstoß";
+      document.getElementById('tab-label-1').innerText = v === 1 ? "Phase 2: 3:3 Innenblock" : "Phase 2: 3:3 Außensektor";
+      document.getElementById('tab-label-2').innerText = v === 1 ? "Phase 3: 4:4 Zentrum" : "Phase 3: 4:4 Verbund";
 
       currentStepIndex = 0;
       progress = 0;
@@ -754,7 +682,8 @@
       // PHASE 2
       else if (currentPhase === 1) {
         if (currentVariant === 1) {
-          let rmX = lerp(250, 250, t);
+          // V1: 3:3 Innenblock
+          let rmX = 250;
           let rmY = lerp(260, 245, t);
           let rlX = lerp(160, 155, t);
           let rlY = lerp(250, 240, t);
@@ -763,7 +692,7 @@
 
           let hrX = 160;
           let hrY = 135;
-          let irX = lerp(235, 235, t);
+          let irX = 235;
           let irY = lerp(135, 160, t);
           let ilX = lerp(310, 270, t);
           let ilY = lerp(135, 125, t);
@@ -780,46 +709,50 @@
           drawPlayer(rmX, rmY, 'RM', 'att');
           drawBall(rlX, rlY - 14);
         } else {
-          let rlX = 175;
-          let rlY = 225;
+          // V2: 3:3 Außensektor (A-AR, A-HR, A-IR vs. LA, RL, KM)
           let laX = 60;
           let laY = 180;
+          let rlX = lerp(175, 180, t);
+          let rlY = lerp(240, 210, t);
           let kmX = 205;
           let kmY = 155;
 
-          let arX = lerp(80, 95, t);
+          let arX = lerp(80, 95, t); // A-AR rückt ein und stellt sich vor den Passweg zu KM
           let arY = lerp(90, 145, t);
 
-          let hrX = 180;
-          let hrY = 135;
-          let irX = 250;
-          let irY = 135;
-          let ilX = 320;
-          let ilY = 130;
+          let hrX = lerp(180, 175, t); // A-HR kämpft sich vorn an der Sperre vorbei
+          let hrY = lerp(135, 170, t);
+
+          let irX = lerp(250, 235, t); // A-IR sichert innen ab
+          let irY = lerp(135, 145, t);
 
           drawScreenSymbol(kmX, kmY);
-          drawLine(175, 220, 65, 180, 'pass');
-          drawLine(80, 90, 95, 145, 'run');
-          
-          if (t > 0.4) {
-            drawLine(65, 180, 200, 155, 'block-line');
+
+          if (t < 0.5) {
+            drawLine(175, 240, 180, 210, 'att-run');
+            drawBall(rlX, rlY - 14);
+          } else {
+            drawLine(180, 210, 65, 180, 'pass'); // Pass zu LA
+            drawLine(65, 180, 200, 155, 'block-line'); // Rote blockierte Passlinie von LA zu KM
+            drawBall(laX, laY - 14);
           }
+
+          drawLine(80, 90, 95, 145, 'run'); // A-AR Bewegung
 
           drawPlayer(arX, arY, 'A-AR', 'def');
           drawPlayer(hrX, hrY, 'A-HR', 'def');
           drawPlayer(irX, irY, 'A-IR', 'def');
-          drawPlayer(ilX, ilY, 'A-IL', 'def');
 
           drawPlayer(kmX, kmY, 'KM', 'km');
           drawPlayer(laX, laY, 'LA', 'att');
           drawPlayer(rlX, rlY, 'RL', 'att');
-          drawBall(laX, laY - 14);
         }
       }
 
-      // PHASE 3 (4:4 Zentrum dynamisch bzw. 6:6 Gegenstoß)
+      // PHASE 3
       else if (currentPhase === 2) {
         if (currentVariant === 1) {
+          // V1: 4:4 Zentrum
           let rmX = lerp(250, 240, t);
           let rmY = lerp(260, 245, t);
           let rlX = lerp(160, 195, t);
@@ -862,29 +795,58 @@
           drawPlayer(rrX, rrY, 'RR', 'att');
           drawBall(rlX, rlY - 14);
         } else {
-          let arY = lerp(90, 280, t);
-          let alY = lerp(90, 280, t);
+          // V2: 4:4 Verbund (A-AR, A-HR, A-IR, A-IL vs. LA, RL, RM, KM)
+          let laX = 60;
+          let laY = 180;
+          let rmX = lerp(250, 230, t);
+          let rmY = lerp(255, 240, t);
+          let rlX = lerp(170, 185, t);
+          let rlY = lerp(245, 205, t);
+          let kmX = 205;
+          let kmY = 155;
 
-          drawLine(70, 90, 70, 280, 'run');
-          drawLine(430, 90, 430, 280, 'run');
+          let arX = lerp(80, 95, t); // A-AR rückt ein und stellt Passweg zu KM zu
+          let arY = lerp(90, 145, t);
 
-          if (t > 0.3) {
-            drawLine(250, 38, 75, arY, 'pass');
-            drawBall(70, arY - 14);
+          let hrX = lerp(175, 175, t); // A-HR arbeitet gegen die Sperre
+          let hrY = lerp(135, 175, t);
+
+          let irX = lerp(240, 225, t); // A-IR tritt heraus
+          let irY = lerp(135, 165, t);
+
+          let ilX = lerp(310, 275, t); // A-IL sichert tief auf 6m (Trichtersicherung)
+          let ilY = lerp(135, 125, t);
+
+          drawScreenSymbol(kmX, kmY);
+
+          if (t < 0.3) {
+            drawLine(250, 255, 170, 245, 'pass'); // RM passt zu RL
+            drawBall(rmX, rmY - 14);
+          } else if (t < 0.65) {
+            drawLine(170, 245, 185, 205, 'att-run'); // RL stößt an
+            drawLine(310, 135, 275, 125, 'run'); // A-IL Trichtersicherung
+            drawBall(rlX, rlY - 14);
           } else {
-            drawBall(250, 38);
+            drawLine(185, 205, 65, 180, 'pass'); // RL passt zu LA
+            drawLine(65, 180, 200, 155, 'block-line'); // Blockierte Passlinie von LA zu KM
+            drawBall(laX, laY - 14);
           }
 
-          drawPlayer(70, arY, 'A-AR', 'def');
-          drawPlayer(140, 130, 'A-HR', 'def');
-          drawPlayer(210, 135, 'A-IR', 'def');
-          drawPlayer(290, 135, 'A-IL', 'def');
-          drawPlayer(360, 130, 'A-HL', 'def');
-          drawPlayer(430, alY, 'A-AL', 'def');
+          drawLine(80, 90, 95, 145, 'run'); // A-AR Bewegung
+
+          drawPlayer(arX, arY, 'A-AR', 'def');
+          drawPlayer(hrX, hrY, 'A-HR', 'def');
+          drawPlayer(irX, irY, 'A-IR', 'def');
+          drawPlayer(ilX, ilY, 'A-IL', 'def');
+
+          drawPlayer(kmX, kmY, 'KM', 'km');
+          drawPlayer(laX, laY, 'LA', 'att');
+          drawPlayer(rlX, rlY, 'RL', 'att');
+          drawPlayer(rmX, rmY, 'RM', 'att');
         }
       }
 
-      // PHASE 4: Feedback
+      // PHASE 4
       else if (currentPhase === 3) {
         drawPlayer(250, 200, 'Coach', 'att');
         for (let i = 0; i < 6; i++) {
@@ -896,9 +858,7 @@
       }
     }
 
-    // Initialer Aufruf
     updateView();
   </script>
-
 </body>
 </html>
